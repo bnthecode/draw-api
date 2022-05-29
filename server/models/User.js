@@ -5,14 +5,6 @@ const User = new Schema({
   username: {
     type: String,
   },
-
-  friends: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Drawings",
-    },
-  ],
-
 });
 
 export default mongoose.model("User", User);

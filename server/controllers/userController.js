@@ -1,6 +1,5 @@
 import User from "../models/User.js";
 
-
 export const createUser = async (req, res) => {
   try {
     const { user } = req.body;
@@ -8,7 +7,7 @@ export const createUser = async (req, res) => {
       ...user,
     });
     const savedUser = await createdUser.save();
-    res.cookie("drawing-is-fun-session", user._id);
+    res.cookie("draw_session", savedUser._id, { httpOnly: true });
     res.status(201).send(savedUser);
   } catch (error) {
     logger.error(`creating user ${error.message}`);
@@ -27,10 +26,7 @@ export const loginUser = async (req, res) => {
     const foundUser = await User.findOne({
       username: user.username,
     });
-
-
-
-    res.cookie("drawing-is-fun-session", foundUser._id);
+    res.cookie("draw_session", foundUser._id, { httpOnly: true });
     res.status(201).send(foundUser);
   } catch (error) {
     logger.error(`logging in ${error.message}`);
@@ -63,8 +59,3 @@ export const loginUser = async (req, res) => {
 //     });
 //   }
 // };
-
-
-
-
-
