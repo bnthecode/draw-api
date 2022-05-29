@@ -12,7 +12,7 @@ const config = {
   },
   auth: {
     auth_enabled: process.env.AUTH_ENABLED === "true",
-    allowedOrigins: process.env.FRONT_END_URL || 'http://localhost:3000',
+    allowedOrigins: process.env.FRONT_END_URL || "http://localhost:3000",
     jwt: {
       jwt_encryption_key: "drawing-app-secret",
       jwt_config: {
@@ -23,9 +23,10 @@ const config = {
     cookie: {},
   },
 
-
   database: {
-    connection_string: process.env.DATABASE_CONNECTION_STRING || 'mongodb+srv://admin:admin@cluster0.824is.mongodb.net/?retryWrites=true&w=majority',
+    connection_string:
+      process.env.DATABASE_CONNECTION_STRING ||
+      "mongodb+srv://admin:admin@cluster0.824is.mongodb.net/?retryWrites=true&w=majority",
     database_config: {
       useNewUrlParser: true,
       useUnifiedTopology: true,

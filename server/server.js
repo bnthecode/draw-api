@@ -20,11 +20,11 @@ const app = express(rootConfig);
 app.use(
   cors({
     credentials: true,
-    origin: allowedOrigins
+    origin: allowedOrigins,
   })
 );
-app.use(express.json({limit: '50mb'}));
-app.use(express.urlencoded({limit: '50mb'}));
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ limit: "50mb" }));
 const server = http.createServer(app);
 app.use(bodyParser.json());
 

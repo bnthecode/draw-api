@@ -1,18 +1,11 @@
 import express from "express";
 
-
-import {
-  createUser,
-  loginUser,
- 
-} from "./controllers/userController.js";
-
+import { createUser, loginUser } from "./controllers/userController.js";
 
 import {
   createDrawing,
   editDrawing,
   getDrawings,
- 
 } from "./controllers/drawingController.js";
 
 const router = express.Router();
@@ -26,8 +19,4 @@ router.post("/drawings", createDrawing);
 router.put("/drawings", editDrawing);
 router.get("/drawings", getDrawings);
 
-
 export default router;
-
-
-
