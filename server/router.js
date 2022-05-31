@@ -5,6 +5,7 @@ import { createUser, loginUser } from "./controllers/userController.js";
 import {
   createDrawing,
   deleteDrawing,
+  editDrawing,
   getDrawing,
   getDrawings,
   getUserDrawings,
@@ -22,4 +23,5 @@ router.get("/drawings", getDrawings);
 router.get("/drawings/me", getUserDrawings);
 router.get("/drawings/:id", getDrawing);
 router.delete("/drawings/:id", deleteDrawing);
+router.put("/drawings/:id", editDrawing);
 export default router;
