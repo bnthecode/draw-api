@@ -1,3 +1,3 @@
-# chatterona_ui_api
+# draw-ui-api
 
-Direct NodeJS / Express api for chatterona_ui
+Direct NodeJS / Express api for draw-ui

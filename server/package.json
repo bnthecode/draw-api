@@ -1,7 +1,7 @@
 {
-  "name": "chatterona_ui_api",
+  "name": "draw_ui_api",
   "version": "1.0.0",
-  "description": "service for chatterona ui",
+  "description": "service for draw ui",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
