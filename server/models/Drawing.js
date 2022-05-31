@@ -9,6 +9,9 @@ const Drawing = new Schema(
     description: {
       type: String,
     },
+    elapsedTime: {
+      type: Number,
+    },
     title: {
       type: String,
     },

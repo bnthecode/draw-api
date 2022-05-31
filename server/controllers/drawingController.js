@@ -2,6 +2,7 @@ import Drawing from "../models/Drawing.js";
 
 export const createDrawing = async (req, res) => {
   const { drawing } = req.body;
+  console.log(drawing);
   const newDrawing = new Drawing({
     creator: req.user.username,
     createdAt: new Date(),
