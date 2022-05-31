@@ -10,7 +10,6 @@ export const createUser = async (req, res) => {
     res.cookie("draw_session", savedUser._id, { httpOnly: true });
     res.status(201).send(savedUser);
   } catch (error) {
-    logger.error(`creating user ${error.message}`);
     res.status(500).send({
       message: {
         content: "An error occured creating user",
@@ -25,12 +24,12 @@ export const loginUser = async (req, res) => {
     const { user } = req.body;
     const foundUser = await User.findOne({
       username: user.username,
+      password: user.password,
     });
     res.cookie("draw_session", foundUser._id, { httpOnly: true });
     res.status(201).send(foundUser);
   } catch (error) {
-    logger.error(`logging in ${error.message}`);
-    res.status(500).send({
+    res.status(401).send({
       message: {
         content: "An error occured logging in user",
         info: error.message,

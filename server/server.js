@@ -10,7 +10,7 @@ import logger from "./utilities/logger.js";
 import { httpAuthMiddleware } from "./middlewares/authMiddleware.js";
 
 const {
-  auth: { allowedOrigins, auth_enabled },
+  auth: { allowedOrigins },
   database: { connection_string, database_config },
   server: { port },
   server: rootConfig,
@@ -33,7 +33,7 @@ app.use("/api", httpAuthMiddleware, router);
 
 try {
   mongoose.connect(connection_string, { ...database_config });
-  logger.success("----- Connected to mongo instance -----");
+  logger.success("----- connected to mongo instance -----");
 } catch (error) {
   console.log(error);
 }
@@ -41,7 +41,7 @@ try {
 server.listen(port, () => {
   console.log(
     "\x1b[36m%s\x1b[0m",
-    "----- Chatterona_ui_api running on port",
+    "----- draw-ui-api running on port",
     port,
     "\x1b[36m",
     "-----"
